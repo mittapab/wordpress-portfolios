@@ -35,5 +35,6 @@
 #ems-tracking > tbody > tr:last-child { 
     color:#131212; 
     font-weight: 900;
-    font-size: 16px
+    font-size: 16px;
+    background:#e9ffe5;
 }

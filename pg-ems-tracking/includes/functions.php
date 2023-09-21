@@ -141,22 +141,33 @@ function showTrackingWidget($tracking){
                     }
 
                     if($data['status'] == '206'){ 
-                      $img_track['step_3'] = '/pg-ems-tracking/assets/img/emsimg-3.png';
+                      $img_track['step_3'] = '/pg-ems-tracking/assets/img/emsimg-2.png';
                       echo "<tr>";
                       echo "<td>".$data['status_date']."</td>";
                       echo "<td>".$data['location']."</td>";
-                      echo "<td>อยู่ระหว่างการนำจ่าย</td>";
+                      echo "<td>".$data['status_description']."</td>";
                       echo "<td><img src='".plugins_url().$img_track['step_3']."' width='40' height='40'></td>";
                       echo "</tr>";
                 
                 }
 
-                if($data['status'] == '207'){ 
+                if($data['status'] == '301'){ 
+                  $img_track['step_4'] = '/pg-ems-tracking/assets/img/emsimg-3.png';
+                  echo "<tr>";
+                  echo "<td>".$data['status_date']."</td>";
+                  echo "<td>".$data['location']."</td>";
+                  echo "<td>".$data['status_description']."</td>";
+                  echo "<td><img src='".plugins_url().$img_track['step_4']."' width='40' height='40'></td>";
+                  echo "</tr>";
+        
+          }
+
+                if($data['status'] == '501'){ 
                       $img_track['step_4'] = '/pg-ems-tracking/assets/img/emsimg-4.png';
                       echo "<tr>";
                       echo "<td>".$data['status_date']."</td>";
                       echo "<td>".$data['location']."</td>";
-                      echo "<td>รับพัสดุแล้ว</td>";
+                      echo "<td>".$data['status_description']."</td>";
                       echo "<td><img src='".plugins_url().$img_track['step_4']."' width='40' height='40'></td>";
                       echo "</tr>";
             
