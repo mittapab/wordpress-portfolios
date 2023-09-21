@@ -10,6 +10,7 @@
 
  require_once(plugin_dir_path(__FILE__).'/includes/functions.php');
  require_once(plugin_dir_path(__FILE__).'/includes/Emstracking-Widget.php');
+ require_once(plugin_dir_path(__FILE__).'/includes/shortcode.php');
 
  function register_ems_tracking_widget(){
     

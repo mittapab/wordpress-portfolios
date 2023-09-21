@@ -15,18 +15,31 @@ class Emstracking_Widget extends WP_Widget{
 
         if(isset($instance['key_token'])){
            $token_track = getAuthAPI($instance['key_token']);
-
-           $barcode = array(
-            "EW296489328TH",
-           
-        );
-        
-           $tracking = getTracking( $barcode , $token_track['token']);
-
+       }else{
+        $token_track = null;
+       } 
        
-        }
+       if(isset( $_GET['track_code'])){
+
+        $track_code = $_GET['track_code'];
+        $barcode = ($track_code) ? array($track_code): array();
+        $tracking = getTracking( $barcode , $token_track['token']);
+
+        showTrackingWidget($tracking);
+
+       }else{   $track_code = "";  } 
        
-    }
+       ?>
+
+<div class="custom-widget">
+    <form id="custom-form">
+        <label for="name">Tracking Number :</label>
+        <input type="text" id="name" name="track_code" value="<?php echo esc_html($track_code);  ?>" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+       
+   <?php }
 
     public function form($instance){
 
@@ -54,4 +67,5 @@ class Emstracking_Widget extends WP_Widget{
         return  $instance;
     }
 
+   
 }
