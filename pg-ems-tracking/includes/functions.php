@@ -185,8 +185,53 @@ function showTrackingWidget($tracking){
 
      <?php } 
     }
+    
+
 
 }
+
+
+
+// $login = 'root';
+// $password = 'o2pt a9um 5f4z 5ARU cUg1 CgU0';
+// // รายละเอียดของรีเควสต์
+// $request_args = array(
+//   'method'      => 'POST', // กำหนดเป็น POST
+//   'headers'     => array(
+//       'Content-Type' => 'application/json', // กำหนด Content-Type
+//       'Authorization' => 'Basic '.base64_encode( "$login:$password" ) 
+//   ),
+//   'body'        => json_encode(array(
+//        'title'   => 'My test 2',
+//        'status'  => 'draft',
+//        'content' => 'test post'
+//   )), // ข้อมูลที่จะส่งในรีเควสต์ (ในกรณีนี้เป็น JSON)
+//   'timeout'     => 45, // กำหนดเวลาที่จะรอรับการตอบกลับ (วินาที)
+//   'redirection' => 5, // จำนวนการเปลี่ยนเส้นทางสูงสุดที่อนุญาต
+//   'blocking'    => true, // รอการตอบกลับแบบ blocking
+//   'sslverify'   => false, // ปิดการตรวจสอบ SSL (ใช้ได้ในกรณีที่เว็บไซต์อื่นไม่มี SSL)
+// );
+
+// // ทำการรีเควสต์
+// $response = wp_remote_post('http://localhost/sitewp-2/wordpress/wp-json/wp/v2/posts', $request_args);
+
+// // ตรวจสอบว่ารีเควสต์สำเร็จหรือไม่
+// if (is_wp_error($response)) {
+//   echo 'เกิดข้อผิดพลาด: ' . $response->get_error_message();
+// } else {
+//   // ดึงข้อมูลจากการตอบกลับ
+//   $response_body = wp_remote_retrieve_body($response);
+//   echo 'การตอบกลับ: Success';
+
+
+// }
+
+
+
+
+
+
+
 
 
 

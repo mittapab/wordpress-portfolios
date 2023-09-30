@@ -5,7 +5,7 @@ class Thaigold_Widget extends WP_Widget{
   function  __construct(){
 
     parent::__construct(
-        't_g_w', 
+        't_g_w', //id
         __('Thai Gold Widget' ,'mmr_domain') ,
         array('description' => __('A Thaigold price widget' , 'mmr_domain'))
     );

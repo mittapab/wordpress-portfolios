@@ -1,0 +1,30 @@
+
+.form-regis{
+
+    background: #fdfdfd;
+    padding: 20px 20px 20px 20px;
+    border-radius: 12px;
+    font-family: 'Kanit', sans-serif;
+    box-shadow:0px 8px 30px #ececec 
+
+}
+.form-el{
+    margin-bottom: 8px;
+}
+
+.bt-submit{
+    margin-top: 20px !important;
+}
+.text-regis{
+    text-align: center;
+    font-size: 28px!important;
+    font-weight: bolder;
+    margin: 20px 0 20px 0;
+}
+.text-rq{
+    color: rgb(190, 7, 7) !important;
+}
+
+.admin-font{
+    font-family: 'Kanit', sans-serif;
+}
