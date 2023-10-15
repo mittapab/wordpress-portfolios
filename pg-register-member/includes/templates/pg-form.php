@@ -2,13 +2,44 @@
 
 
 function checkNumberPhone($phone){
-    
+
+    $phone = sanitize_text_field($phone);
+
     if(preg_match('/[0-9]{10}/', $phone)){
         return $phone;
     }else{
         wp_die("format phone invalid!!");
     }
 }
+
+function checkEmail($email){
+    $check_email = sanitize_email($email);
+    if(!empty($email) && is_email($email)){
+       return $check_email;
+    }else{
+        wp_die('format email is valid');
+    }
+}
+
+function checkAddress($addr){
+    $addr = sanitize_textarea_field($addr);
+    if(!empty($addr)){
+       return $addr;
+    }else{
+        wp_die('format address is valid');
+    }
+}
+
+function checkTextField($text){
+    $field = sanitize_text_field($text);
+    if(!empty($field)){
+       return $field;
+    }else{
+        wp_die('format field is valid'.$text);
+    }
+}
+
+
 
 
 
@@ -19,24 +50,38 @@ function checkNumberPhone($phone){
 
     $table_name = "pg_regsiter_member";
 
-    $wpdb->insert(
-        $table_name,
-        array(
-            'c_regis_firstname' => esc_html($_POST['fname']),
-            'c_regis_lastname' =>  esc_html($_POST['lname']),
-            'c_regis_age' =>  esc_html($_POST['age']),
-            'c_register_gender' =>  esc_html($_POST['gander']),
-            'c_regis_tel' =>  esc_html(checkNumberPhone($_POST['tel'])),
-            'c_regis_email' =>  esc_html($_POST['email']),
-            'c_regis_address' =>  esc_html($_POST['addr']),
-        )
-    );
-      echo("<script>location.href = '".site_url( '/thank-you' )."'</script>"); 
+            if(isset($_POST['fname']) && 
+            isset($_POST['lname']) &&
+            isset($_POST['age']) &&
+            isset($_POST['gander']) &&
+            isset($_POST['tel']) &&
+            isset($_POST['email']) &&
+            isset($_POST['addr']) ){
+
+            if (isset($_POST['fn_nonce']) && wp_verify_nonce($_POST['fn_nonce'], 'fn_action')) {
+                $wpdb->insert(
+                    $table_name,
+                    array(
+                        'c_regis_firstname' => checkTextField($_POST['fname']),
+                        'c_regis_lastname' =>  checkTextField($_POST['lname']),
+                        'c_regis_age' =>  checkTextField($_POST['age']),
+                        'c_register_gender' => sanitize_text_field($_POST['gander']),
+                        'c_regis_tel' =>  checkNumberPhone($_POST['tel']),
+                        'c_regis_email' =>  checkEmail($_POST['email']),
+                        'c_regis_address' => checkAddress($_POST['addr']),
+                    )
+                );
+                echo("<script>location.href = '".site_url( '/thank-you' )."'</script>"); 
+            }
+        }else{
+            wp_die('field is valid');
+        }
 }else{
     
 ob_start(); ?>
 
 <form class="form-regis" method="post" action="">
+  <?php wp_nonce_field('fn_action', 'fn_nonce'); ?>
     <div class="row">
         <div class="col-12">
             <h3 class="text-regis"><?php _e('ลงทะเบียน','pg-rgt'); ?></h3>
@@ -89,9 +134,6 @@ ob_start(); ?>
 }
 
 add_shortcode( 'pg-form', 'formShortCode');
-
-
-?>
 
 
 

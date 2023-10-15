@@ -34,3 +34,21 @@ function addScriptsPgRegister(){
 
 add_action('admin_enqueue_scripts','addScriptsPgRegister');
 
+function delete_member($id){
+  global $wpdb;
+  $table = "pg_regsiter_member";
+  $delete_member = $wpdb->delete($table , array("c_regis_id" => $id));
+  echo("<script>location.href = '".admin_url( '/admin.php?page=mrgt-all' )."'</script>");
+  exit;
+
+}
+
+function edit_member($id){
+  global $wpdb;
+  $table = "pg_regsiter_member";
+  $query_prepare = $wpdb->prepare("SELECT * FROM  $table WHERE c_regis_id='".$id."'");
+  $result = $wpdb->get_results($query_prepare);
+
+  return json_decode(json_encode($result), true);
+}
+
