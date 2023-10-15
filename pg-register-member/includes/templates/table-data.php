@@ -18,13 +18,13 @@ function csv_export_page() {
     $set_data[0] =  $herader_csv;
     for($loop = 0; $loop < count($results); $loop++){
 
-      
+              $gender = ($data[$loop]['c_register_gender'] == 1) ? "ชาย":"หญิง";
             
              $set_data[$loop+1] = array (
               ($loop+1), 
               $data[$loop]['c_regis_firstname']." ".$data[$loop]['c_regis_lastname'], 
               $data[$loop]['c_regis_age'],
-              $data[$loop]['c_register_gender'],
+              $gender,
               $data[$loop]['c_regis_email'],
               '"'.$data[$loop]['c_regis_tel'].'"',
               trim($data[$loop]['c_regis_address']),
