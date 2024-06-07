@@ -1,0 +1,80 @@
+// import { useEffect } from "react";
+// import { getMobileOS } from "./methods/getMobileOS";
+// import { getEnvironmentFromUrl } from "./methods/getQueryString";
+
+// const REDIRECT_URL = {
+//   deepLink: {
+//     dev: "goodmoneydev://",
+//     pen: "goodmoneypen://",
+//     uat: "goodmoneyuat://",
+//     prod: "goodmoney://",
+//   },
+//   fallbackIosID: {
+//     dev: "6476854255",
+//     uat: "6476854142",
+//     pen: "6477866380",
+//     prod: "6476857961",
+//   },
+//   fallbackIosURL: "https://apps.apple.com/app/id",
+//   fallbackAndroidAppID: {
+//     dev: "com.moneydd.goodmoneydev",
+//     pen: "com.moneydd.goodmoneypen",
+//     uat: "com.moneydd.goodmoneyuat",
+//     prod: "com.moneydd.goodmoney",
+//   },
+//   fallbackAndroidURLdeepLink: "market://details?id=",
+//   fallbackAndroidURL: "https://play.google.com/store/apps/details?id=",
+// };
+// function App() {
+//   async function handleAppRedirect() {
+//     const environment = getEnvironmentFromUrl();
+//     let change = false;
+   
+//     // Try to open the when user click in the "confirm" in popup
+//     window.location.replace(`${REDIRECT_URL.deepLink[environment]}`);
+//     switch (getMobileOS()) {
+//       case "Android":
+//         setTimeout(() => {
+//           // If the app is not installed,
+//           // then the user is redirect to the Play Store
+//           if (!change) {
+//             window.location.replace(
+//               `${REDIRECT_URL.fallbackAndroidURL}${REDIRECT_URL.fallbackAndroidAppID[environment]}`
+//             );
+//           }
+//         }, 5000);
+//         break;
+//       case "iOS":
+//         setTimeout(() => {
+//           // If the app is not installed
+//           // then the user is reedirect to the App Store
+//           if (!change) {
+//             window.location.replace(
+//               `${REDIRECT_URL.fallbackIosURL}${REDIRECT_URL.fallbackIosID[environment]}`
+//             );
+//           }
+//         }, 5000);
+//         break;
+
+//       default:
+//       window.location.replace("http://192.168.56.1:3000/wordpress-portfolios/pg-react-shortcode/frontend/build");
+//       // window.location.href = "http://localhost/money-good/";
+
+//       break;
+//     }
+//     window.onblur = function () {
+//       change = true;
+//     };
+//     window.onfocus = function () {
+//       change = false;
+//     };
+//   }
+
+//   useEffect(() => {
+//     handleAppRedirect();
+//   }, []);
+
+//   return <div className="App">Welcome</div>;
+// }
+
+// export default App;

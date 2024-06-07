@@ -1,0 +1,229 @@
+*{
+    font-family: 'kanit'!important;
+}
+.fs-7 {
+    font-size: 14px !important;
+}
+
+.fs-8 {
+    font-size: 12px !important;
+}
+
+.fs-9 {
+    font-size: 10px !important;
+}
+
+.btn-pink {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ed147d;
+    --bs-btn-border-color: #ed147d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ed147d;
+    --bs-btn-hover-border-color: #ed147d;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ed147d;
+    --bs-btn-active-border-color: #ed147d;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #ed147d;
+    --bs-btn-disabled-border-color: #ed147d;
+}
+
+.btn-outline-pink {
+    --bs-btn-color: #ed147d;
+    --bs-btn-border-color: #ed147d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ed147d;
+    --bs-btn-hover-border-color: #ed147d;
+    --bs-btn-focus-shadow-rgb: 33, 37, 41;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #ed147d;
+    --bs-btn-active-border-color: #ed147d;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ed147d;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #ed147d;
+    --bs-gradient: none;
+}
+
+.text-pink {
+    color: #ed147d !important;
+}
+
+.bg-none {
+    background-color: transparent !important;
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+body {
+    color: #6a6b76;
+    background-color: #fbfbff;
+}
+
+.box-shadow-01 {
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+}
+
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* ------------- Navbar ------------- */
+.en-navbar-master {
+    position: relative;
+}
+
+.en-navbar-content {
+    position: absolute;
+}
+
+.en-navbar-master .container {
+    max-width: 1800px;
+}
+
+.en-navbar-content .nav-link {
+    color: #fff !important;
+    font-weight: 500 !important;
+    padding: 12px 13px 12px !important;
+}
+
+.en-navbar-content .nav-link.action {
+    color: #fff !important;
+    font-weight: 500 !important;
+    padding: 12px 13px 12px !important;
+}
+
+.en-navbar-content .nav-item .dropdown-menu {}
+
+.en-navbar-content .dropdown-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+.en-navbar-content .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ------------- End Navbar ------------- */
+
+/* ------------- Header ------------- */
+.en-header-content .en-profile-container {
+    max-width: 1400px;
+}
+
+.en-header-content {
+    padding-top: 4.3rem;
+    padding-bottom: 2rem;
+    /* height: 300px; */
+    background-image: url("../../assets/img/639055199d530-bp-cover-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+    .en-header-content {
+        height: auto;
+    }
+}
+
+.en-snumber {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 5px;
+}
+
+.en-header-content .en-profile-photo {
+    display: block;
+    height: 160px;
+    width: 160px;
+    border: 8px solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    background-color: rgba(255, 255, 255, .35);
+}
+
+.en-header-content .en-star-rating i {
+    color: gold;
+    font-size: 20px;
+    padding: 0 3px;
+}
+
+.en-header-content .en-separator {
+    color: #fff;
+    margin: 0 5px;
+    font-size: 15px;
+}
+
+.en-usermeta {
+    color: #fff;
+}
+
+/* ------------- End Header ------------- */
+
+/* ------------- Proflie tab ------------- */
+.en-proflie-tab {
+    max-width: 1400px;
+}
+
+.en-profile-tab-item {
+    text-transform: uppercase;
+    padding: 26px 25px;
+    color: #848b92;
+    font-size: 16px;
+}
+
+/* ------------- End Proflie tab ------------- */
+
+.en-box-container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-info-detail-title {
+    min-width: 160px;
+    font-weight: 700;
+    color: #202020;
+}
+
+.profile-info-detail-text {
+    color: #202020;
+}
+
+
+/* Removes the default 20px margin and creates some padding space for the indicators and controls */
+.carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+    left: -12px;
+}
+.carousel-control.right {
+    right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+    background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}
+
+
